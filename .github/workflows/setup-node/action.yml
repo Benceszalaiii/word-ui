@@ -4,6 +4,10 @@ description: "Setup Node.js ⚙️ - Cache dependencies ⚡ - Install dependenci
 runs:
   using: "composite"
   steps:
+    - name: Cooking bun 🍞
+      uses: oven-sh/setup-bun@v2
+      with:
+          bun-version: latest
     - name: Setup Node.js ⚙️
       uses: actions/setup-node@v4
       with:
