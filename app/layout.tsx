@@ -1,8 +1,8 @@
-import Footer from "@/components/footer";
-import Navbar from "@/components/nav";
-import Providers from "@/components/providers";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
+import Footer from "../components/footer";
+import Navbar from "../components/nav";
+import Providers from "../components/providers";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -19,9 +19,9 @@ export default function RootLayout({
       <body className={`antialiased min-h-screen`}>
         <ThemeProvider attribute={"class"} disableTransitionOnChange>
           <Providers />
-            <Navbar />
-            <main className="min-h-screen w-full py-4">{children}</main>
-            <Footer />
+          <Navbar />
+          <main className="min-h-screen w-full py-4">{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

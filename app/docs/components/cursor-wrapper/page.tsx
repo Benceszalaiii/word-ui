@@ -1,15 +1,20 @@
 "use client";
-import CodeBlock from "@/components/code";
+import Link from "next/link";
+import CodeBlock from "../../../../components/code";
 import {
   DocsContent,
   DocsDescription,
   DocsPage,
   DocsTitle,
-} from "@/components/docs";
-import CursorGlow from "@/components/previews/cursor-glow";
-import CursorWrapper from "@/components/previews/cursor-wrapper";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import Link from "next/link";
+} from "../../../../components/docs";
+import CursorGlow from "../../../../components/previews/cursor-glow";
+import CursorWrapper from "../../../../components/previews/cursor-wrapper";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "../../../../components/ui/tabs";
 
 const code = `
 "use client";
@@ -119,8 +124,14 @@ export default function Page() {
         <DocsTitle size="2xl" className="mt-12">
           Usage
         </DocsTitle>
-        <DocsDescription>You can use the <span className="inline-code">title</span> parameter to add a title to the section.</DocsDescription>
-        <DocsDescription>To set the cursor's color, use the <span className="inline-code">cursorColor</span> parameter.</DocsDescription>
+        <DocsDescription>
+          You can use the <span className="inline-code">title</span> parameter
+          to add a title to the section.
+        </DocsDescription>
+        <DocsDescription>
+          To set the cursor&apos;s color, use the{" "}
+          <span className="inline-code">cursorColor</span> parameter.
+        </DocsDescription>
         <CodeBlock language="tsx" filename="page.tsx" code={usage} />
       </DocsContent>
     </DocsPage>

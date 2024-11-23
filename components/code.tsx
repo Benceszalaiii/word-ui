@@ -17,7 +17,8 @@ function CodeBlock({
   language: string;
   filename?: string;
 }) {
-  const [state, copyToClipboard] = useCopyToClipboard();
+  
+  const [, copyToClipboard] = useCopyToClipboard();
 
   const copyCode = () => {
     // Logic to copy `code`

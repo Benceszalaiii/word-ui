@@ -1,5 +1,10 @@
-import CodeBlock from "@/components/code";
-import { DocsContent, DocsDescription, DocsPage, DocsTitle } from "@/components/docs";
+import CodeBlock from "../../../../components/code";
+import {
+  DocsContent,
+  DocsDescription,
+  DocsPage,
+  DocsTitle,
+} from "../../../../components/docs";
 
 const code = `
 import { useEffect, useState } from "react";
@@ -42,22 +47,37 @@ export default function CursorGlow() {
     </div>
   );
 }
-`
+`;
 export default function Page() {
   return (
     <DocsPage>
       <DocsTitle>useMousePosition</DocsTitle>
       <DocsContent>
-        <DocsDescription>Used to get the cursor's position</DocsDescription>
+        <DocsDescription>Used to get the cursor&apos;s position</DocsDescription>
 
-        <DocsTitle size="2xl" className="text-start mb-2 pb-2 mt-12">Source code</DocsTitle>
-        <CodeBlock code={code} language="tsx" filename="hooks/use-mouseposition.ts" />
-        <DocsTitle size="2xl" className="text-start mb-2 pb-2 mt-16">Usage</DocsTitle>
+        <DocsTitle size="2xl" className="text-start mb-2 pb-2 mt-12">
+          Source code
+        </DocsTitle>
+        <CodeBlock
+          code={code}
+          language="tsx"
+          filename="hooks/use-mouseposition.ts"
+        />
+        <DocsTitle size="2xl" className="text-start mb-2 pb-2 mt-16">
+          Usage
+        </DocsTitle>
         <div className="self-start mx-4">
-        <DocsDescription >Returns with <span className="inline-code">mousePos</span>: An object containing the X and Y coordinates of the mouse.</DocsDescription>
+          <DocsDescription>
+            Returns with <span className="inline-code">mousePos</span>: An
+            object containing the X and Y coordinates of the mouse.
+          </DocsDescription>
         </div>
-        <CodeBlock language="tsx" filename="components/cursor-glow.tsx" code={usage} />
-        <div className="h-32"/>
+        <CodeBlock
+          language="tsx"
+          filename="components/cursor-glow.tsx"
+          code={usage}
+        />
+        <div className="h-32" />
       </DocsContent>
     </DocsPage>
   );

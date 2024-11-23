@@ -1,6 +1,6 @@
 "use client";
 
-import useCursorTheme from "@/hooks/use-cursor-theme";
+import useCursorTheme from "../../hooks/use-cursor-theme";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { geistMono } from "@/app/fonts";
+import { geistMono } from "../app/fonts";
 
 import { BookTextIcon, LayoutPanelLeftIcon, LinkIcon } from "lucide-react";
 import Link from "next/link";

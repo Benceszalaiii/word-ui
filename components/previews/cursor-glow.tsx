@@ -1,5 +1,5 @@
-import { useIsMobile } from "@/hooks/use-mobile";
-import { useMousePosition } from "@/hooks/use-mouseposition";
+import { useIsMobile } from "../../hooks/use-mobile";
+import { useMousePosition } from "../../hooks/use-mouseposition";
 import { motion } from "framer-motion";
 
 export default function CursorGlow() {

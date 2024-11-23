@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Button } from "../components/ui/button";
 import { geistMono } from "./fonts";
 
 const linkClasses =
@@ -14,7 +14,6 @@ export default function Page() {
         WordUI
       </h1>
       <p>
-
         <Link href={`https://react.dev`} className={linkClasses}>
           React
         </Link>{" "}

@@ -1,13 +1,13 @@
 "use client";
-import CodeBlock from "@/components/code";
+import CodeBlock from "../../../../components/code";
 import {
   DocsContent,
   DocsDescription,
   DocsPage,
   DocsTitle,
-} from "@/components/docs";
-import CursorGlow from "@/components/previews/cursor-glow";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+} from "../../../../components/docs";
+import CursorGlow from "../../../../components/previews/cursor-glow";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../../components/ui/tabs";
 
 const code = `
 import { useIsMobile } from "@/hooks/use-mobile";

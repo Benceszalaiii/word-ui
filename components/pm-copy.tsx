@@ -11,7 +11,7 @@ import {
 import { useCopyToClipboard } from "react-use";
 
 export default function PmCopy({ text, x }: { text: string; x?: boolean }) {
-    const [state, copyToClipboard] = useCopyToClipboard();
+    const [, copyToClipboard] = useCopyToClipboard();
     const copyClipboard = (pm: string) => {
     if (x) {
       copyToClipboard(pm + text);
