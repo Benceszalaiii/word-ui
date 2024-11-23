@@ -5,3 +5,7 @@ export const geistMono = localFont({
     variable: "--font-geist-mono",
     weight: "100 900",
   });
+  export const inter = localFont({
+    src: "./Inter.ttf",
+    variable: "--font-inter",
+});

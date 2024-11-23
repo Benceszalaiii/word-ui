@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col items-center justify-center w-full h-16 bg-neutral-200 dark:bg-neutral-800">
+    <footer className="flex flex-col items-center justify-center w-full h-16 bg-neutral-200 dark:bg-neutral-900">
       <p className={`${geistMono.className}`}>
         Project by
         <Link

@@ -4,6 +4,11 @@
 
 @layer base {
   :root {
+    --cursor: #5b21b6;
+    --am-prism-line-numbers-color: #565f8977;
+    --am-prism-border-color: #565f8922;
+    --am-prism-copy-color: #a9b1d6;
+    --am-prism-copy-bg: #565f8933;
     --background: 0 0% 100%;
 
     --foreground: 0 0% 3.9%;
@@ -53,8 +58,26 @@
     --chart-5: 27 87% 67%;
 
     --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
   .dark {
+    --cursor: #5b21b6;
+
     --background: 0 0% 3.9%;
 
     --foreground: 0 0% 98%;
@@ -102,6 +125,22 @@
     --chart-4: 280 65% 60%;
 
     --chart-5: 340 75% 55%;
+
+    --sidebar-background: 240 5.9% 10%;
+
+    --sidebar-foreground: 240 4.8% 95.9%;
+
+    --sidebar-primary: 224.3 76.3% 48%;
+
+    --sidebar-primary-foreground: 0 0% 100%;
+
+    --sidebar-accent: 240 3.7% 15.9%;
+
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+
+    --sidebar-border: 240 3.7% 15.9%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -112,4 +151,146 @@
   body {
     @apply bg-background text-foreground;
   }
+  .docs-title {
+    @apply w-full border-b-2 border-border py-2 pb-4 font-bold mb-8;
+  }
+  .docs {
+    @apply w-full md:px-16 px-4;
+  }
+  .docs-content {
+    @apply px-4 md:px-12 font-mono;
+  }
+  .docs-description {
+    @apply w-full text-start text-secondary-foreground my-4;
+  }
+  .inline-code {
+    @apply bg-neutral-200 dark:bg-neutral-800 px-2 py-1 rounded-sm;
+  }
+  
+ code[class*='language-'],
+ pre[class*='language-'] {
+     color: #a9b1d6 !important;
+ }
+ 
+ pre[class*='language-']::-moz-selection,
+ pre[class*='language-'] ::-moz-selection,
+ code[class*='language-']::-moz-selection,
+ code[class*='language-'] ::-moz-selection {
+     text-shadow: none !important; 
+     @apply !bg-opacity-75 !bg-transparent !backdrop-blur-lg
+ }
+ 
+ pre[class*='language-']::selection,
+ pre[class*='language-'] ::selection,
+ code[class*='language-']::selection,
+ code[class*='language-'] ::selection {
+     text-shadow: none;
+     @apply !bg-opacity-75 !bg-transparent !backdrop-blur-lg
+ }
+ 
+ :not(pre) > code[class*='language-'],
+ pre[class*='language-'] {
+     color: white !important;
+     @apply !bg-opacity-75 !bg-transparent !backdrop-blur-lg
+ }
+ 
+ :not(pre) > code[class*='language-'] {
+     padding: 0.1em !important;
+     border-radius: 0.3em !important;
+     white-space: normal !important;
+ }
+ 
+ .token.comment {
+     color: #565f89 !important;
+     font-style: italic !important;
+ }
+ 
+ .token.keyword {
+     color: #9d7cd8 !important;
+ }
+ 
+ .token.operator {
+     color: #89ddff !important;
+ }
+ 
+ .token.punctuation {
+     color: #bb9af7 !important;
+ }
+ 
+ .token.builtin {
+     color: #f7768e !important;
+ }
+ 
+ .token.number {
+     color: #ff9e64 !important;
+ }
+ 
+ .token.constant {
+     color: #ff9e64 !important;
+ }
+ 
+ .token.string {
+     color: #9ece6a !important;
+ }
+ 
+ .token.symbol {
+     color: #2ac3de !important;
+ }
+ 
+ .token.attr-name {
+     color: rgb(241, 250, 140) !important;
+ }
+ 
+ .token.selector {
+     color: #9ece6a !important;
+ }
+ 
+ .token.hexcode {
+     color: #9aa5ce !important;
+ }
+ 
+ .token.function {
+     color: #7aa2f7 !important;
+ }
+ 
+ .token.tag {
+     color: #9ece6a !important;
+ }
+ 
+ .token.variable {
+     color: #c0caf5 !important;
+ }
+ 
+ .token.char {
+     color: #bb9af7 !important;
+ }
+ 
+ .token.property {
+     color: #2ac3de  !important;
+ }
+ 
+ .token.inserted {
+     color: #449dab !important;
+ }
+ 
+ .token.deleted {
+     color: #914c54 !important;
+ }
+ 
+ .token.changed {
+     color: #6183bb !important;
+ }
+ 
+ .token.regex {
+     color: #b4f9f8 !important;
+ }
+ 
+ .token.important,
+ .token.bold {
+     font-weight: bold !important;
+ }
+ 
+ .token.italic {
+     font-style: italic !important;
+ }
 }
