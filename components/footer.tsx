@@ -1,4 +1,4 @@
-import { geistMono } from "@/app/fonts";
+import { geistMono } from "../app/fonts";
 import Link from "next/link";
 
 export default function Footer() {

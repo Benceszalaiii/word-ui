@@ -1,5 +1,5 @@
 "use client";
-import { useIsMobile } from "hooks/use-mobile";
+import { useIsMobile } from "../../hooks/use-mobile";
 import { AppSidebar } from "../../components/app-sidebar";
 import {
   SidebarProvider,

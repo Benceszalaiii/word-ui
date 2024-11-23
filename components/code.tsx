@@ -2,7 +2,7 @@
 
 import { CodeBlock as Block } from "react-code-block";
 
-import { inter } from "@/app/fonts";
+import { inter } from "../app/fonts";
 import { ClipboardIcon } from "lucide-react";
 
 import { useCopyToClipboard } from "react-use";
