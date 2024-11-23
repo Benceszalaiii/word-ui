@@ -37,7 +37,7 @@ const items: SidebarGroup[] = [
     subItems: [
       {
         title: "Installation",
-        href: "/docs/installation",
+        href: "/installation",
       },
     ],
   },
@@ -47,11 +47,11 @@ const items: SidebarGroup[] = [
     subItems: [
       {
         title: "Cursor Glow",
-        href: "/docs/cursor-glow",
+        href: "/cursor-glow",
       },
       {
         title: "Cursor Wrapper",
-        href: "/docs/cursor-wrapper",
+        href: "/cursor-wrapper",
       },
     ],
   },
@@ -61,11 +61,11 @@ const items: SidebarGroup[] = [
     subItems: [
       {
         title: "useCursorTheme",
-        href: "/docs/usecursortheme",
+        href: "/usecursortheme",
       },
       {
         title: "useMousePosition",
-        href: "/docs/usemouseposition",
+        href: "/usemouseposition",
       },
     ],
   },
@@ -84,7 +84,7 @@ export function AppSidebar() {
                   <SubLink
                     key={subItem.href}
                     active={path === item.prefix + subItem.href}
-                    href={item.prefix + subItem.href}
+                    href={"/docs" + item.prefix + subItem.href}
                   >
                     {subItem.title}
                   </SubLink>
