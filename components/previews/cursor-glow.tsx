@@ -1,3 +1,4 @@
+"use client"
 import { useIsMobile } from "../../hooks/use-mobile";
 import { useMousePosition } from "../../hooks/use-mouseposition";
 import { motion } from "framer-motion";
