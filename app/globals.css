@@ -155,7 +155,7 @@
     @apply w-full border-b-2 border-border py-2 pb-4 font-bold mb-8;
   }
   .docs {
-    @apply w-full md:px-16 px-4;
+    @apply w-full md:px-16 px-4 select-none;
   }
   .docs-content {
     @apply px-4 md:px-12 font-mono;
