@@ -20,26 +20,26 @@ export default function Navbar() {
       </Link>
       <div className="flex flex-row gap-2">
         <Link
-          href={`/getting-started`}
+          href={`/docs/getting-started/installation`}
           className={`${itemClasses}`}
         >
           Introduction
         </Link>
         <Link
-          href={`/components`}
+          href={`/docs/components/cursor-glow`}
           className={`${itemClasses}`}
         >
           <LayoutPanelLeftIcon className="h-4 w-4" />
           Components
         </Link>
         <Link
-          href={`/hooks`}
+          href={`/docs/hooks/usecursortheme`}
           className={`${itemClasses}`}
         >
           <LinkIcon className="h-4 w-4 text-neutral-500 dark:text-neutral-300" />
           Hooks
         </Link>
-        <Link className={`${buttonVariants({variant: "outline"})} px-4 ml-auto group py-2 mr-2 flex md:hidden flex-row items-center gap-1`} href={"/getting-started/installation"}>
+        <Link className={`${buttonVariants({variant: "outline"})} px-4 ml-auto group py-2 mr-2 flex md:hidden flex-row items-center gap-1`} href={"/docs/getting-started/installation"}>
         <BookTextIcon className="h-4 w-4" />
         </Link>
       </div>

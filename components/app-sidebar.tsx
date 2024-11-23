@@ -37,7 +37,7 @@ const items: SidebarGroup[] = [
     subItems: [
       {
         title: "Installation",
-        href: "/installation",
+        href: "/docs/installation",
       },
     ],
   },
@@ -47,11 +47,11 @@ const items: SidebarGroup[] = [
     subItems: [
       {
         title: "Cursor Glow",
-        href: "/cursor-glow",
+        href: "/docs/cursor-glow",
       },
       {
         title: "Cursor Wrapper",
-        href: "/cursor-wrapper",
+        href: "/docs/cursor-wrapper",
       },
     ],
   },
@@ -61,11 +61,11 @@ const items: SidebarGroup[] = [
     subItems: [
       {
         title: "useCursorTheme",
-        href: "/usecursortheme",
+        href: "/docs/usecursortheme",
       },
       {
         title: "useMousePosition",
-        href: "/usemouseposition",
+        href: "/docs/usemouseposition",
       },
     ],
   },

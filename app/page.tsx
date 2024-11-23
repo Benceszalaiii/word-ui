@@ -32,10 +32,10 @@ export default function Page() {
       </p>
       <div className="mt-12 flex flex-row gap-4 items-center">
         <Button asChild className="mt-8" variant={"ringHover"}>
-          <Link href={"/introduction"}>Introduction</Link>
+          <Link href={"/docs/introduction"}>Introduction</Link>
         </Button>
         <Button asChild className="mt-8" variant={"secondary"}>
-          <Link href={"/components"}>Components</Link>
+          <Link href={"/docs/components"}>Components</Link>
         </Button>
       </div>
     </section>
