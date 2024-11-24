@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`antialiased min-h-screen`}>
-        <ThemeProvider attribute={"class"} disableTransitionOnChange>
+        <ThemeProvider attribute={"class"} defaultTheme="dark" disableTransitionOnChange>
           <Providers />
           <Navbar />
           <main className="min-h-screen w-full py-4">{children}</main>
