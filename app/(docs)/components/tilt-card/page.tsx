@@ -198,21 +198,21 @@ export default function Page() {
               className="flex pt-12 flex-row items-center justify-center gap-4 overflow-x-scroll"
             >
               <TiltCard
-                title="Main"
-                value={0}
+                title="Orange"
+                value={1}
                 unit="units"
                 colorVariant="orange"
               />
               <TiltCard
-                title="Title"
-                value={0}
+                title="Sky"
+                value={2}
                 unit="units"
                 colorVariant="sky"
               />
               <CursorWrapper color="0 255 0">
                 <TiltCard
-                  title="Title"
-                  value={0}
+                  title="Emerald"
+                  value={3}
                   unit="units"
                   colorVariant="emerald"
                 />
@@ -227,7 +227,7 @@ export default function Page() {
                 Cursor Wrapper
               </Link>{" "}
               with it.{" "}
-              <span className="italic text-gray-500">See green card above</span>
+              <span className="italic text-gray-500">See emerald card above</span>
             </DocsDescription>
           </TabsContent>
           <TabsContent value="code">
