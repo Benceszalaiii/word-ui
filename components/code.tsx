@@ -2,8 +2,8 @@
 
 import { CodeBlock as Block } from "react-code-block";
 
-import { inter } from "../app/fonts";
 import { ClipboardIcon } from "lucide-react";
+import { inter } from "../app/fonts";
 
 import { useCopyToClipboard } from "react-use";
 import { toast } from "sonner";
@@ -17,27 +17,38 @@ function CodeBlock({
   language: string;
   filename?: string;
 }) {
-  
   const [, copyToClipboard] = useCopyToClipboard();
 
   const copyCode = () => {
-    // Logic to copy `code`
-
     copyToClipboard(code);
-    toast.success("Code copied to clipboard");
   };
-
   return (
     <Block code={code} language={language}>
-      <div className="relative">
+      <div className="relative border select-text overflow-scroll rounded-xl max-w-screen-lg max-h-96">
+        <div className="sticky top-0 flex flex-row justify-between left-0 w-full bg-gray-200 dark:bg-neutral-950">
+
         {filename && (
           <p
-            className={`absolute top-0 left-0 rounded-t-xl w-full p-2 border bg-neutral-950 text-sm ${inter.className} antialiased`}
+          className={`p-2 text-sm ${inter.className} antialiased`}
           >
             {filename}
           </p>
         )}
-        <Block.Code className={`bg-white/75 dark:bg-neutral-900/75 overflow-x-scroll p-6 ${filename && "pt-12"} rounded-xl shadow-lg`}>
+        <Button
+          variant={"ghost"}
+          size={"icon"}
+          className="rounded-br-none"
+          onClick={() => {
+            copyCode();
+            toast.info("Code copied to clipboard", { icon: "📋" });
+          }}
+          >
+          <ClipboardIcon className="h-4 w-4" />
+        </Button>
+          </div>
+        <Block.Code
+          className={`bg-white/50 dark:bg-neutral-900/75 overflow-x-scroll p-6 shadow-lg`}
+        >
           <div className="table-row">
             <Block.LineNumber className="table-cell pr-4 text-sm text-gray-500 text-right select-none" />
 
@@ -47,14 +58,6 @@ function CodeBlock({
           </div>
         </Block.Code>
 
-        <Button
-          variant={"ghost"}
-          size={"icon"}
-          className="absolute top-0 right-0 rounded-br-none"
-          onClick={copyCode}
-        >
-          <ClipboardIcon className="h-4 w-4" />
-        </Button>
       </div>
     </Block>
   );

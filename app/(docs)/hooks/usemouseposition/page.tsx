@@ -51,7 +51,7 @@ export default function CursorGlow() {
 export default function Page() {
   return (
     <DocsPage>
-      <DocsTitle>useMousePosition</DocsTitle>
+      <DocsTitle main>useMousePosition</DocsTitle>
       <DocsContent>
         <DocsDescription>Used to get the cursor&apos;s position</DocsDescription>
 

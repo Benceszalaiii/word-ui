@@ -1,4 +1,5 @@
 "use client";
+import { Button } from "components/ui/button";
 import Link from "next/link";
 import CodeBlock from "../../../../components/code";
 import {
@@ -8,7 +9,9 @@ import {
   DocsTitle,
 } from "../../../../components/docs";
 import CursorGlow from "../../../../components/previews/cursor-glow";
-import CursorWrapper from "../../../../components/previews/cursor-wrapper";
+import CursorWrapper, {
+  Section,
+} from "../../../../components/previews/cursor-wrapper";
 import {
   Tabs,
   TabsContent,
@@ -19,57 +22,42 @@ import {
 const code = `
 "use client";
 
-import useCursorTheme from "@/hooks/use-cursor-theme";
+import useCursorTheme from "hooks/use-cursor-theme";
 import React from "react";
-import { twMerge } from "tailwind-merge";
-export default function CursorWrapper({
-  children,
-  title,
-  className,
-  cursorColor,
-}: {
-  className?: string;
-  title: string;
-  children: React.ReactNode;
-  cursorColor?: string;
-}) {
+
+const CursorWrapper = React.forwardRef<
+  HTMLDivElement,
+  { color: string; children: React.ReactNode }
+>(({ color, children }, ref) => {
   const { setTheme, setCursorDefault, defaultTheme } = useCursorTheme();
+
   return (
-    <section
+    <div
       onMouseEnter={() => {
-        setTheme(cursorColor || defaultTheme);
+        setTheme(color || defaultTheme);
       }}
       onMouseLeave={setCursorDefault}
-      className={twMerge(
-        \`relative mt-8 flex w-full max-w-screen-md flex-col items-center 
-        justify-center gap-4 rounded-lg border border-border 
-        bg-opacity-10 p-8 backdrop-blur-lg
-        md:gap-8 md:overflow-hidden\`,
-        className
-      )}
+      ref={ref}
+      style={{ display: "contents" }}
     >
-      <legend
-        about="Legend"
-        className={\`self-start text-lg font-semibold text-opacity-75 
-        select-none -z-10 text-black/75 animate-in dark:text-white/75\`}
-      >
-        {title}
-      </legend>
-
       {children}
-    </section>
+    </div>
   );
-}
+});
 
+CursorWrapper.displayName = "CursorWrapper";
+export default CursorWrapper;
 `;
 
 const usage = `
 export default function Page(){
-return (
-        {/*  Use either a HEX value or a CSS builtin color name */}
-        <CursorWrapper title="Cursor Wrapper" cursorColor="red"> 
-            The cursor will be red in this section
-        </CursorWrapper>
+  return (
+      {/*  Use rgb for color, without brackets*/}
+      <CursorWrapper color="255 0 0">
+        <Section title="Custom Section">
+          The cursor will be red in this section
+        </Section>
+      </CursorWrapper>
     )
 }
 `;
@@ -78,27 +66,34 @@ export default function Page() {
   return (
     <DocsPage>
       <CursorGlow />
-      <DocsTitle>Cursor Glow</DocsTitle>
-      <DocsDescription>
-        Use with{" "}
-        <Link
-          href={"/components/cursor-glow"}
-          className="underline underline-offset-2"
-        >
-          Cursor Glow
-        </Link>{" "}
-        to create color changing cursor glow.
-      </DocsDescription>
+      <DocsTitle main>Cursor Wrapper</DocsTitle>
       <DocsContent>
+        <DocsDescription>
+          Use with{" "}
+          <Link
+            href={"/components/cursor-glow"}
+            className="underline underline-offset-2"
+          >
+            Cursor Glow
+          </Link>{" "}
+          to create color changing cursor glow.
+        </DocsDescription>
         <Tabs defaultValue="preview" className="w-full">
           <TabsList>
             <TabsTrigger value="preview">Preview</TabsTrigger>
             <TabsTrigger value="code">Code</TabsTrigger>
           </TabsList>
           <TabsContent value="preview">
-            <CursorWrapper title="Cursor Wrapper" cursorColor="red">
-              The cursor will be red in this section
+            <CursorWrapper color="255 0 0">
+              <Section title="Custom Section" className="h-64">
+                The cursor will be red in this section
+              </Section>
             </CursorWrapper>
+            <Section title="Shadcn button with glow" className="h-64">
+              <CursorWrapper color="10 100 255">
+                <Button variant={"secondary"}>Hover me</Button>
+              </CursorWrapper>
+            </Section>
           </TabsContent>
           <TabsContent value="code">
             <DocsTitle size="lg" className="pb-1 mb-4">

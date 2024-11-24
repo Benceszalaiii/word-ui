@@ -10,7 +10,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        cursor: "var(--cursor)",
+        cursor: "rgb(var(--cursor) / <alpha-value>)",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

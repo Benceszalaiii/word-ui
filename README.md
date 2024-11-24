@@ -1,6 +1,6 @@
 # WordUI
 
-A copy paste React component library. 
+A copy paste React component library.
 
 Just copy the code provided on the site and the dependencies, and you can access beautiful elements to make your website look modern.
 

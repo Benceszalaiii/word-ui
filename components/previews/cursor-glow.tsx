@@ -1,14 +1,19 @@
 "use client"
+import { useEffect } from "react";
 import { useIsMobile } from "../../hooks/use-mobile";
 import { useMousePosition } from "../../hooks/use-mouseposition";
 import { motion } from "framer-motion";
+import useCursorTheme from "hooks/use-cursor-theme";
 
 export default function CursorGlow() {
   const mousePos = useMousePosition();
   const isMobile = useIsMobile();
+  const {setCursorDefault}= useCursorTheme();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(setCursorDefault, [])
   return (
     <div
-      className={`fixed left-0 top-0 -z-10 h-screen w-screen overflow-hidden`}
+      className={`fixed left-0 top-0 -z-10 h-full w-full overflow-hidden`}
     >
       <motion.div
         hidden={isMobile || (mousePos.x === 0 && mousePos.y === 0)}

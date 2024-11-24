@@ -12,7 +12,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <SidebarProvider>
       <AppSidebar />
       <main className="w-full">
-        {isMobile && <SidebarTrigger className="sticky top-16" />}
+        {isMobile && <SidebarTrigger className="sticky z-40 transition-all top-20" />}
         {children}
       </main>
     </SidebarProvider>

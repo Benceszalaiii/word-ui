@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
+import { ChevronDown } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
+import { useState } from "react";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@radix-ui/react-collapsible";
-import { ChevronDown } from "lucide-react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+} from "../components/ui/collapsible";
 import {
   Sidebar,
   SidebarContent,
@@ -17,6 +17,7 @@ import {
   SidebarMenuItem,
   SidebarMenuSub,
   SidebarMenuSubItem,
+  useSidebar,
 } from "./ui/sidebar";
 
 type SidebarItem = {
@@ -53,6 +54,10 @@ const items: SidebarGroup[] = [
         title: "Cursor Wrapper",
         href: "/cursor-wrapper",
       },
+      {
+        title: "Tilt Card",
+        href: "/tilt-card"
+      }
     ],
   },
   {
@@ -73,6 +78,8 @@ const items: SidebarGroup[] = [
 
 export function AppSidebar() {
   const path = usePathname();
+  const router = useRouter();
+  const {setOpenMobile} = useSidebar();
   return (
     <Sidebar>
       <SidebarContent className="pt-16">
@@ -81,13 +88,20 @@ export function AppSidebar() {
             <CollapsibleMenu key={item.name} title={item.name}>
               {item.subItems.map((subItem) => {
                 return (
-                  <SubLink
+                  <SidebarMenuSubItem
                     key={subItem.href}
-                    active={path === item.prefix + subItem.href}
-                    href={"/docs" + item.prefix + subItem.href}
+                    className={
+                      path === item.prefix + subItem.href
+                        ? "underline underline-offset-2 cursor-pointer font-bold"
+                        : "cursor-pointer"
+                    }
+                    onClick={() => {
+                      router.push(item.prefix + subItem.href);
+                      setOpenMobile(false);
+                    }}
                   >
                     {subItem.title}
-                  </SubLink>
+                  </SidebarMenuSubItem>
                 );
               })}
             </CollapsibleMenu>
@@ -122,26 +136,5 @@ function CollapsibleMenu({
         </SidebarMenuItem>
       </Collapsible>
     </SidebarMenu>
-  );
-}
-
-function SubLink({
-  href,
-  children,
-  active,
-}: {
-  active?: boolean;
-  href: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <SidebarMenuSubItem>
-      <Link
-        href={href}
-        className={active ? "underline underline-offset-2 font-bold" : ""}
-      >
-        {children}
-      </Link>
-    </SidebarMenuSubItem>
   );
 }

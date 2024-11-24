@@ -44,7 +44,7 @@ export default function ComponentWithCursor({ cursorColor } : {cursorColor?: str
 export default function Page() {
   return (
     <DocsPage>
-      <DocsTitle>useCursorTheme</DocsTitle>
+      <DocsTitle main>useCursorTheme</DocsTitle>
       <DocsContent>
         <DocsDescription>
           Used to get the current cursor theme and modify it
@@ -61,7 +61,7 @@ export default function Page() {
         <DocsTitle size="2xl" className="text-start mb-2 pb-2 mt-16">
           Usage
         </DocsTitle>
-        <div className="self-start mx-4">
+        <div className="self-start">
           <DocsDescription>
             <span className="inline-code">theme</span>: The current color
             applied to the cursor

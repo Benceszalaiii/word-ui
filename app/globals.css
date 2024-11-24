@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --cursor: #5b21b6;
+    --cursor: 91 33 182;
     --am-prism-line-numbers-color: #565f8977;
     --am-prism-border-color: #565f8922;
     --am-prism-copy-color: #a9b1d6;
@@ -76,7 +76,7 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
   .dark {
-    --cursor: #5b21b6;
+    --cursor: 91 33 182;
 
     --background: 0 0% 3.9%;
 
@@ -145,6 +145,15 @@
 }
 
 @layer base {
+    h1{
+        @apply cursor-default;
+    }
+    p{
+        @apply cursor-default;
+    }
+    div{
+        @apply cursor-default;
+    }
   * {
     @apply border-border;
   }
@@ -152,10 +161,10 @@
     @apply bg-background text-foreground;
   }
   .docs-title {
-    @apply w-full border-b-2 border-border py-2 pb-4 font-bold mb-8;
+    @apply w-full border-b-2 border-gray-300/75 dark:border-neutral-800/80 py-2 pb-4 font-bold mb-8;
   }
   .docs {
-    @apply w-full md:px-16 px-4 select-none;
+    @apply w-full !select-text selection:bg-cursor selection:p-2 selection:!bg-opacity-50 selection:no-underline selection:!decoration-cursor;
   }
   .docs-content {
     @apply px-4 md:px-12 font-mono;

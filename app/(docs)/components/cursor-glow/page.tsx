@@ -7,7 +7,12 @@ import {
   DocsTitle,
 } from "../../../../components/docs";
 import CursorGlow from "../../../../components/previews/cursor-glow";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../../components/ui/tabs";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "../../../../components/ui/tabs";
 
 const code = `
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -36,7 +41,7 @@ export default function Page() {
   return (
     <DocsPage>
       <CursorGlow />
-      <DocsTitle>Cursor Glow</DocsTitle>
+      <DocsTitle main>Cursor Glow</DocsTitle>
       <DocsContent>
         <Tabs defaultValue="preview" className="w-full">
           <TabsList>
@@ -49,7 +54,11 @@ export default function Page() {
             </DocsDescription>
           </TabsContent>
           <TabsContent value="code">
-            <CodeBlock language="tsx" filename="components/cursor-glow.tsx" code={code} />
+            <CodeBlock
+              language="tsx"
+              filename="components/cursor-glow.tsx"
+              code={code}
+            />
           </TabsContent>
         </Tabs>
         <DocsTitle className="mt-16">Usage</DocsTitle>
@@ -63,19 +72,27 @@ export default function Page() {
           code={`
 @layer base {
   :root {
-    --cursor: #5b21b6;
+    --cursor: 91 33 182;
         }
       }
 `}
         />
-      <DocsDescription> Add cursor to your <span className="inline-code">tailwind.config.ts</span> file</DocsDescription>
-      <CodeBlock language="typescript" filename="tailwind.config.ts" code={`
+        <DocsDescription>
+          {" "}
+          Add cursor to your{" "}
+          <span className="inline-code">tailwind.config.ts</span> file
+        </DocsDescription>
+        <CodeBlock
+          language="typescript"
+          filename="tailwind.config.ts"
+          code={`
   theme: {
     extend: {
       colors: {
-        cursor: "var(--cursor)",
-        `} />
-        </DocsContent>
+        cursor: "rgb(var(--cursor) / <alpha-value>)",
+        `}
+        />
+      </DocsContent>
     </DocsPage>
   );
 }
