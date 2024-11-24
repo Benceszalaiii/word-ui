@@ -47,7 +47,7 @@ function CodeBlock({
         </Button>
           </div>
         <Block.Code
-          className={`bg-white/50 dark:bg-neutral-900/75 overflow-x-scroll p-6 shadow-lg`}
+          className={`bg-white/50 dark:bg-neutral-900/75 p-6 shadow-lg`}
         >
           <div className="table-row">
             <Block.LineNumber className="table-cell pr-4 text-sm text-gray-500 text-right select-none" />
