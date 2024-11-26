@@ -20,7 +20,7 @@ export default function Navbar() {
       </Link>
       <div className="flex flex-row gap-2">
         <Link
-          href={`/getting-started/installation`}
+          href={`/getting-started/introduction`}
           className={`${itemClasses}`}
         >
           Introduction
@@ -33,7 +33,7 @@ export default function Navbar() {
           Components
         </Link>
         <Link
-          href={`/hooks/usecursortheme`}
+          href={`/hooks/use-cursor-theme`}
           className={`${itemClasses}`}
         >
           <LinkIcon className="h-4 w-4 text-neutral-500 dark:text-neutral-300" />

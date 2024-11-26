@@ -24,9 +24,8 @@ function CodeBlock({
   };
   return (
     <Block code={code} language={language}>
-      <div className="relative border select-text overflow-scroll rounded-xl max-w-screen-lg max-h-96">
+      <div className="relative border bg-white/50 dark:bg-neutral-900/75 select-text overflow-scroll rounded-xl max-w-screen-lg max-h-96">
         <div className="sticky top-0 flex flex-row justify-between left-0 w-full bg-gray-200 dark:bg-neutral-950">
-
         {filename && (
           <p
           className={`p-2 text-sm ${inter.className} antialiased`}
@@ -48,12 +47,12 @@ function CodeBlock({
         </Button>
           </div>
         <Block.Code
-          className={`bg-white/50 dark:bg-neutral-900/75 p-6 shadow-lg`}
+          className={`p-6 shadow-lg`}
         >
           <div className="table-row">
             <Block.LineNumber className="table-cell pr-4 text-sm text-gray-500 text-right select-none" />
 
-            <Block.LineContent className="table-cell">
+            <Block.LineContent className="table-cell w-full">
               <Block.Token />
             </Block.LineContent>
           </div>

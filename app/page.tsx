@@ -12,7 +12,7 @@ export default function Page() {
   return (
     <section className="flex flex-col items-center h-full mt-24 w-full">
       <CursorGlow />
-      <CursorWrapper color="250 250 250">
+      <CursorWrapper color="250 0 250">
         <h1
           className={`${geistMono.className} bg-gradient-to-r via-sky-500 via-40% to-neutral-600 text-[6rem] bg-clip-text from-violet-700 font-semibold text-transparent`}
         >
@@ -39,7 +39,7 @@ export default function Page() {
       <div className="mt-12 flex flex-row gap-4 items-center">
         <CursorWrapper color="110 110 255">
           <Button asChild onClick={()=> {}} className="mt-8" variant={"ringHover"}>
-            <Link href={"/getting-started/installation"}>Introduction</Link>
+            <Link href={"/getting-started/introduction"}>Introduction</Link>
           </Button>
         </CursorWrapper>
         <CursorWrapper color="125 125 125">

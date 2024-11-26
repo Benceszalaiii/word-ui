@@ -14,7 +14,7 @@ export default function Footer() {
           Benceszalaiii
         </Link>
       </p>
-      <Link href={"https://www.github.com/benceszalaiii"} className="italic">Open source and ready to fork</Link>
+      <Link href={"https://www.github.com/benceszalaiii/word-ui/fork"} className="font-geist">Open source and ready to fork</Link>
     </footer>
   );
 }

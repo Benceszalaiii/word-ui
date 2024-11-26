@@ -172,10 +172,10 @@ const usage = `
 export default function Page(){
   return (
     <TiltCard
-        title="Title"
-        value={0}
+        title="Orange"
+        value={1}
         unit="units"
-        colorVariant="emerald"
+        colorVariant="orange"
         />
     )
 }
@@ -195,7 +195,7 @@ export default function Page() {
           <TabsContent value="preview">
             <Section
               title="Tilt Card variants"
-              className="flex pt-12 flex-row items-center justify-center gap-4 overflow-x-scroll"
+              className="flex pt-12 md:flex-row flex-col items-center justify-center gap-4 md:overflow-x-scroll"
             >
               <TiltCard
                 title="Orange"

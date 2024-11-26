@@ -23,54 +23,75 @@ import {
 type SidebarItem = {
   title: string;
   href: string;
+  emoji?: string;
   children?: SidebarItem[];
 };
 type SidebarGroup = {
   name: string;
   prefix: string;
+  emoji?: string;
   subItems: SidebarItem[];
 };
 
 const items: SidebarGroup[] = [
   {
     name: "Getting Started",
+    emoji: "🚀",
     prefix: "/getting-started",
     subItems: [
       {
+        title: "Introduction",
+        href: "/introduction",
+        emoji: "👋",
+      },
+      {
         title: "Installation",
         href: "/installation",
+        emoji: "⚙️",
       },
     ],
   },
   {
     name: "Components",
+    emoji: "🧩",
     prefix: "/components",
     subItems: [
       {
         title: "Cursor Glow",
+        emoji: "🌟",
         href: "/cursor-glow",
       },
       {
         title: "Cursor Wrapper",
         href: "/cursor-wrapper",
+        emoji: "🎁"
+      },
+      {
+        title: "Button styles",
+        href: "/buttons",
+        emoji: "🎨",
       },
       {
         title: "Tilt Card",
-        href: "/tilt-card"
+        href: "/tilt-card",
+        emoji: "🃏",
       }
     ],
   },
   {
     name: "Hooks",
+    emoji: "🪝",
     prefix: "/hooks",
     subItems: [
       {
         title: "useCursorTheme",
-        href: "/usecursortheme",
+        href: "/use-cursor-theme",
+        emoji: "🌈",
       },
       {
         title: "useMousePosition",
-        href: "/usemouseposition",
+        href: "/use-mouse-position",
+        emoji: "🖱️",
       },
     ],
   },
@@ -82,24 +103,26 @@ export function AppSidebar() {
   const {setOpenMobile} = useSidebar();
   return (
     <Sidebar>
-      <SidebarContent className="pt-16">
+      <SidebarContent className="pt-16 font-inter">
         {items.map((item) => {
           return (
-            <CollapsibleMenu key={item.name} title={item.name}>
+
+            <CollapsibleMenu emoji={item.emoji} key={item.name} title={item.name}>
               {item.subItems.map((subItem) => {
                 return (
                   <SidebarMenuSubItem
                     key={subItem.href}
                     className={
                       path === item.prefix + subItem.href
-                        ? "underline underline-offset-2 cursor-pointer font-bold"
-                        : "cursor-pointer"
+                        ? "underline underline-offset-4 cursor-pointer py-2 font-bold"
+                        : "cursor-pointer py-2"
                     }
                     onClick={() => {
                       router.push(item.prefix + subItem.href);
                       setOpenMobile(false);
                     }}
                   >
+                    {subItem.emoji}
                     {subItem.title}
                   </SidebarMenuSubItem>
                 );
@@ -116,8 +139,10 @@ export function AppSidebar() {
 function CollapsibleMenu({
   title,
   children,
+  emoji
 }: {
   title: string;
+  emoji?: string;
   children: React.ReactNode;
 }) {
   return (
@@ -126,7 +151,7 @@ function CollapsibleMenu({
         <SidebarMenuItem>
           <CollapsibleTrigger asChild>
             <SidebarMenuButton className="font-semibold text-base">
-              {title}
+              {emoji}{title}
               <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
             </SidebarMenuButton>
           </CollapsibleTrigger>
